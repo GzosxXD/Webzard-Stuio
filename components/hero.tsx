@@ -22,20 +22,18 @@ export default function Hero() {
         {/* Floating Badge */}
         <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-secondary border border-border mb-6 sm:mb-8">
           <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-          <span className="text-xs sm:text-sm font-medium text-muted-foreground">AI-Powered Web Solutions</span>
+          <span className="text-xs sm:text-sm font-medium text-muted-foreground">Systems-First Web Development</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight text-foreground mb-4 sm:mb-6 text-balance">
-          Custom{" "}
-          <span className="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">
-            AI-Powered Websites
-          </span>{" "}
-          for Your Business
+          Websites Built, Optimized,{" "}
+          <span className="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">and Engineered</span>{" "}
+          to Perform
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed text-pretty">
-          AI web development for businesses that want clarity and results. Transparent pricing, direct developer
-          communication, no long-term contracts.
+          We design and engineer high-performance websites, backend systems, and optimizations that improve speed,
+          conversions, and long-term reliability—without unnecessary rebuilds.
         </p>
 
         {/* CTAs */}

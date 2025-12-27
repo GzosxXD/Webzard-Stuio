@@ -23,6 +23,11 @@ const projects = [
       "Improved local SEO visibility",
       "Patient satisfaction up",
     ],
+    traffic: {
+      before: "2,400",
+      after: "3,360",
+      increase: "+40%",
+    },
   },
   {
     id: 2,
@@ -43,6 +48,11 @@ const projects = [
       "50% higher quality leads",
       "25% more showing requests",
     ],
+    traffic: {
+      before: "4,800",
+      after: "6,240",
+      increase: "+30%",
+    },
   },
   {
     id: 3,
@@ -63,6 +73,11 @@ const projects = [
       "40% event booking rate",
       "Social engagement doubled",
     ],
+    traffic: {
+      before: "1,800",
+      after: "2,520",
+      increase: "+40%",
+    },
   },
   {
     id: 4,
@@ -83,6 +98,11 @@ const projects = [
       "40% fewer no-shows",
       "15% better retention",
     ],
+    traffic: {
+      before: "3,200",
+      after: "4,480",
+      increase: "+40%",
+    },
   },
   {
     id: 5,
@@ -103,6 +123,11 @@ const projects = [
       "Higher case values",
       "Better qualified clients",
     ],
+    traffic: {
+      before: "3,600",
+      after: "4,680",
+      increase: "+30%",
+    },
   },
   {
     id: 6,
@@ -123,6 +148,11 @@ const projects = [
       "35% customer base growth",
       "60% more wedding leads",
     ],
+    traffic: {
+      before: "2,800",
+      after: "3,920",
+      increase: "+40%",
+    },
   },
 ]
 
@@ -178,6 +208,29 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
             <div className="p-8 bg-card rounded-2xl border border-border">
               <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">The Results</h2>
               <p className="text-base text-muted-foreground leading-relaxed">{project.outcome}</p>
+            </div>
+          </div>
+
+          {/* Traffic Impact */}
+          <div className="mb-16">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-8">Traffic Impact</h2>
+            <div className="grid grid-cols-3 gap-6 p-8 bg-secondary/30 rounded-2xl border border-border">
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground mb-2">Monthly Traffic Before</p>
+                <p className="text-3xl sm:text-4xl font-bold text-foreground">{project.traffic.before}</p>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="flex flex-col items-center">
+                  <svg className="w-8 h-8 text-gold mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <span className="text-lg sm:text-xl font-semibold text-gold">{project.traffic.increase}</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground mb-2">Monthly Traffic After</p>
+                <p className="text-3xl sm:text-4xl font-bold text-foreground">{project.traffic.after}</p>
+              </div>
             </div>
           </div>
 

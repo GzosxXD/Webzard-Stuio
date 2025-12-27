@@ -10,21 +10,21 @@ const projects = [
     title: "Evergreen Dental",
     category: "Healthcare",
     description: "Modern patient-focused dental website.",
-    image: "/modern-dental-clinic-website-clean-design.jpg",
+    image: "/modern-dental-clinic-website-professional.jpg",
   },
   {
     id: 2,
     title: "Summit Realty",
     category: "Real Estate",
     description: "Luxury real estate platform with advanced search.",
-    image: "/luxury-real-estate-property-listings-website.jpg",
+    image: "/luxury-real-estate-website-property-listings.jpg",
   },
   {
     id: 3,
     title: "Craft & Barrel",
     category: "Restaurant",
     description: "Elegant online presence for an upscale gastropub.",
-    image: "/elegant-restaurant-website-dark-theme-menu.jpg",
+    image: "/upscale-restaurant-website-elegant-dark-theme.jpg",
   },
 ]
 
