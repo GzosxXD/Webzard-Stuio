@@ -136,12 +136,14 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    /* Fixed to translate full width for seamless loop */
+    transform: translateX(-100%);
   }
 }
 
 .animate-marquee-rtl {
-  animation: marquee-rtl 30s linear infinite;
+  /* Increased speed and ensured continuous animation */
+  animation: marquee-rtl 40s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
