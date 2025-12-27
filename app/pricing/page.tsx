@@ -194,13 +194,22 @@ export default function PricingPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="p-6 sm:p-8 bg-card rounded-2xl border border-border">
+                <h3 className="text-lg font-semibold text-foreground mb-3">How does payment work?</h3>
+                <p className="text-sm text-muted-foreground">
+                  We follow a milestone-based payment structure (30% advance, 50% at demo, 20% at launch).{" "}
+                  <Link href="/how-we-work#payment" className="text-gold hover:underline">
+                    View full payment structure
+                  </Link>
+                </p>
+              </div>
+              <div className="p-6 sm:p-8 bg-card rounded-2xl border border-border">
                 <h3 className="text-lg font-semibold text-foreground mb-3">Can I upgrade or downgrade anytime?</h3>
                 <p className="text-sm text-muted-foreground">
                   Yes, you can upgrade or downgrade your plan anytime. We'll adjust the pricing accordingly.
                 </p>
               </div>
               <div className="p-6 sm:p-8 bg-card rounded-2xl border border-border">
-                <h3 className="text-lg font-semibold text-foreground mb-3">What's included in the updates?</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-3">What's included in support?</h3>
                 <p className="text-sm text-muted-foreground">
                   Minor bug fixes, security patches, and performance improvements. Major features require additional
                   investment.
@@ -212,13 +221,6 @@ export default function PricingPage() {
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Yes, if you're not satisfied with our work within 10 days, we refund 100% of your payment.
-                </p>
-              </div>
-              <div className="p-6 sm:p-8 bg-card rounded-2xl border border-border">
-                <h3 className="text-lg font-semibold text-foreground mb-3">Do you offer custom pricing?</h3>
-                <p className="text-sm text-muted-foreground">
-                  Absolutely. For projects outside these tiers, let's discuss your specific needs and create a custom
-                  package.
                 </p>
               </div>
             </div>

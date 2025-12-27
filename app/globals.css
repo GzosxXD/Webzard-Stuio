@@ -129,25 +129,3 @@
     background-size: 500px 500px;
   }
 }
-
-/* Added right-to-left marquee animation */
-@keyframes marquee-rtl {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* Fixed to translate full width for seamless loop */
-    transform: translateX(-100%);
-  }
-}
-
-.animate-marquee-rtl {
-  /* Increased speed and ensured continuous animation */
-  animation: marquee-rtl 40s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee-rtl {
-    animation: none;
-  }
-}

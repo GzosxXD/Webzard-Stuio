@@ -130,6 +130,15 @@ export default function PricingPreview() {
             <Link href="/pricing">View All Plans</Link>
           </Button>
         </div>
+
+        <div className="mt-8 text-center">
+          <p className="text-sm text-muted-foreground">
+            All plans follow our transparent{" "}
+            <Link href="/how-we-work#payment" className="text-gold hover:underline font-medium">
+              milestone-based payment structure
+            </Link>
+          </p>
+        </div>
       </div>
     </section>
   )

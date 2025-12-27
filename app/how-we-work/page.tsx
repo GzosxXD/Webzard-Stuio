@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Search, PenTool, RefreshCw, Rocket, CheckCircle2 } from "lucide-react"
+import { Search, PenTool, RefreshCw, Rocket, CheckCircle2, CreditCard } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Footer from "@/components/footer"
@@ -121,7 +121,7 @@ export default function HowWeWorkPage() {
             <div className="p-8 bg-secondary/30 rounded-2xl border border-border text-center">
               <h3 className="text-xl font-semibold text-foreground mb-3">Typical Timeline</h3>
               <p className="text-sm text-muted-foreground">
-                Most projects complete in 4-8 weeks depending on complexity and scope. Rush options available.
+                Most projects complete in 1-3 weeks depending on complexity and scope. Rush options available.
               </p>
             </div>
             <div className="p-8 bg-secondary/30 rounded-2xl border border-border text-center">
@@ -129,6 +129,148 @@ export default function HowWeWorkPage() {
               <p className="text-sm text-muted-foreground">
                 No surprise costs. Feedback-driven development ensures your vision is realized exactly as intended.
               </p>
+            </div>
+          </div>
+
+          {/* Payment Structure Section */}
+          <div className="mt-24 mb-16">
+            <div className="text-center mb-12">
+              <span className="text-sm font-medium text-gold uppercase tracking-wider">Payment Structure</span>
+              <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-foreground">Milestone-Based Payments</h2>
+              <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+                We follow a transparent milestone-based payment structure to ensure clarity, alignment, and
+                accountability on both sides.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Milestone 1: 30% Advance */}
+              <div className="p-8 bg-card rounded-2xl border border-border">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-navy/10 flex items-center justify-center">
+                    <CreditCard className="w-6 h-6 text-navy" />
+                  </div>
+                  <div>
+                    <span className="text-2xl font-bold text-gold">30%</span>
+                    <p className="text-sm text-muted-foreground">Advance</p>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-semibold text-foreground mb-3">Discovery & Planning</h3>
+                <p className="text-sm text-muted-foreground mb-4">We begin with a structured Zoom call where we:</p>
+
+                <ul className="space-y-2">
+                  {[
+                    "Understand your business, goals, and target audience",
+                    "Review your existing website or requirements",
+                    "Define scope, priorities, and success criteria",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="mt-4 text-sm text-muted-foreground">
+                  After this discussion, we finalize the project scope and share a clear delivery plan. Once approved,
+                  the 30% advance confirms the project and work begins.
+                </p>
+              </div>
+
+              {/* Milestone 2: 50% Demo */}
+              <div className="p-8 bg-card rounded-2xl border border-gold shadow-lg">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
+                    <RefreshCw className="w-6 h-6 text-gold" />
+                  </div>
+                  <div>
+                    <span className="text-2xl font-bold text-gold">50%</span>
+                    <p className="text-sm text-muted-foreground">Milestone</p>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-semibold text-foreground mb-3">Demo & Revisions</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  We design and build a working demo/prototype based on the agreed scope.
+                </p>
+
+                <ul className="space-y-2">
+                  {[
+                    "You review the demo in detail",
+                    "We collect feedback and revision requests",
+                    "We iterate until structure, design, and flow meet expectations",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="mt-4 text-sm text-muted-foreground">
+                  Once revisions are completed and you confirm satisfaction with the demo, the 50% milestone payment is
+                  made.
+                </p>
+              </div>
+
+              {/* Milestone 3: 20% Final */}
+              <div className="p-8 bg-card rounded-2xl border border-border">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-navy/10 flex items-center justify-center">
+                    <Rocket className="w-6 h-6 text-navy" />
+                  </div>
+                  <div>
+                    <span className="text-2xl font-bold text-gold">20%</span>
+                    <p className="text-sm text-muted-foreground">Final</p>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-semibold text-foreground mb-3">Final Delivery & Launch</h3>
+                <p className="text-sm text-muted-foreground mb-4">After final approval:</p>
+
+                <ul className="space-y-2">
+                  {[
+                    "The website is deployed live on your domain",
+                    "All agreed files, assets, and access are handed over",
+                    "Final checks are completed",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="mt-4 text-sm text-muted-foreground">
+                  The remaining 20% is paid once the site is live and fully delivered.
+                </p>
+              </div>
+            </div>
+
+            {/* Why This Structure Works */}
+            <div className="mt-10 p-6 bg-secondary/30 rounded-2xl border border-border">
+              <h3 className="text-lg font-semibold text-foreground mb-3 text-center">Why This Structure Works</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <p className="text-sm font-medium text-foreground">Protects Both Parties</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Clear milestones ensure mutual accountability and trust
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-foreground">Progress-Based</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Payment aligns with tangible deliverables and approvals
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-foreground">Keeps Projects Focused</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    We don't move to the next phase until the previous milestone is approved
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
