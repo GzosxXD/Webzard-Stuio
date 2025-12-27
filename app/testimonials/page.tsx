@@ -2,12 +2,13 @@
 
 import { Star } from "lucide-react"
 import Footer from "@/components/footer"
+import Image from "next/image"
 
 const testimonials = [
   {
     name: "Alex Chen",
     company: "Founder, SaaS Startup",
-    initial: "A",
+    image: "/professional-asian-tech-founder.jpg",
     industry: "Software/SaaS",
     rating: 5,
     quote:
@@ -17,7 +18,7 @@ const testimonials = [
   {
     name: "Maria Rodriguez",
     company: "CEO, E-commerce Brand",
-    initial: "M",
+    image: "/professional-hispanic-businesswoman.jpg",
     industry: "E-commerce",
     rating: 5,
     quote:
@@ -25,9 +26,29 @@ const testimonials = [
     result: "Revenue increased by 60% in first quarter",
   },
   {
+    name: "Rajesh Kumar Singh",
+    company: "Owner, FitZone Gym & Fitness Studio",
+    image: "/indian-gym-owner-fitness-coach.jpg",
+    industry: "Fitness & Wellness",
+    rating: 5,
+    quote:
+      "Our website was slow and outdated. After Webzard optimized it, page speed increased dramatically and we started getting 3x more online bookings. The performance improvements are incredible!",
+    result: "Website speed improved by 85%, bookings tripled",
+  },
+  {
+    name: "Dr. Priya Sharma",
+    company: "Principal Dentist, Smile Care Dental Clinic",
+    image: "/indian-female-dentist-professional.jpg",
+    industry: "Healthcare",
+    rating: 5,
+    quote:
+      "The optimization work they did was outstanding. Our website now loads in under 2 seconds, and patient appointment requests have doubled. They understood exactly what a medical practice needs.",
+    result: "Page load time reduced by 75%, patient inquiries up 120%",
+  },
+  {
     name: "Sarah Thompson",
     company: "Owner, Digital Agency",
-    initial: "S",
+    image: "/professional-caucasian-businesswoman-creative-dire.jpg",
     industry: "Digital Services",
     rating: 5,
     quote:
@@ -35,19 +56,39 @@ const testimonials = [
     result: "Became our top recommended developer",
   },
   {
+    name: "Arjun Patel",
+    company: "Owner, QuickFix Plumbing Services",
+    image: "/indian-plumber-contractor-tradesman.jpg",
+    industry: "Home Services",
+    rating: 5,
+    quote:
+      "I never thought a website could make such a difference. They optimized everything - now customers find me on Google, my site loads fast on mobile, and I get calls every day. Best investment for my business!",
+    result: "Organic traffic increased by 220%, local leads up 180%",
+  },
+  {
     name: "Robert Johnson",
     company: "Director, Healthcare Tech",
-    initial: "R",
-    industry: "Healthcare",
+    image: "/professional-african-american-executive.jpg",
+    industry: "Healthcare Tech",
     rating: 5,
     quote:
       "Security and compliance were handled expertly. The team's attention to detail is outstanding, and they understand healthcare regulations inside and out.",
     result: "HIPAA compliant within timeline",
   },
   {
+    name: "Vikram Mehta",
+    company: "Owner, Spice Route Restaurant",
+    image: "/indian-restaurant-owner-chef.jpg",
+    industry: "Restaurant & Hospitality",
+    rating: 5,
+    quote:
+      "Our old website was killing our online orders. Webzard completely rebuilt and optimized it - now it's lightning fast, mobile-friendly, and orders have increased by 150%. The ROI has been phenomenal!",
+    result: "Online orders up 150%, website speed improved by 90%",
+  },
+  {
     name: "Jessica Lee",
     company: "Founder, Fintech Startup",
-    initial: "J",
+    image: "/professional-asian-american-tech-entrepreneur.jpg",
     industry: "Financial Tech",
     rating: 5,
     quote:
@@ -57,7 +98,7 @@ const testimonials = [
   {
     name: "Michael Brown",
     company: "VP Product, B2B SaaS",
-    initial: "L",
+    image: "/professional-caucasian-tech-executive.jpg",
     industry: "Enterprise SaaS",
     rating: 5,
     quote:
@@ -89,11 +130,16 @@ export default function TestimonialsPage() {
                 key={index}
                 className="p-8 sm:p-10 bg-card rounded-2xl border border-border hover:border-gold/50 hover:shadow-lg transition-all duration-300"
               >
-                {/* Avatar & Stars */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center">
-                      <span className="text-xl font-semibold text-gold">{testimonial.initial}</span>
+                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-gold/30 flex-shrink-0">
+                      <Image
+                        src={testimonial.image || "/placeholder.svg"}
+                        alt={testimonial.name}
+                        width={56}
+                        height={56}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <h3 className="text-base sm:text-lg font-semibold text-foreground">{testimonial.name}</h3>

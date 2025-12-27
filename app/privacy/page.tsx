@@ -39,7 +39,7 @@ export default function PrivacyPolicy() {
 
             <h2 className="text-xl font-medium text-foreground mt-8 mb-4">Contact Us</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              If you have any questions about this Privacy Policy, please contact us at webzardo@gmail.com.
+              If you have any questions about this Privacy Policy, please contact us at webzardo@webzardstudios.com.
             </p>
           </div>
         </div>

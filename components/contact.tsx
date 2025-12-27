@@ -71,8 +71,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-medium text-foreground">Email</h3>
-                  <a href="mailto:webzardo@gmail.com" className="text-muted-foreground hover:text-foreground">
-                    webzardo@gmail.com
+                  <a href="mailto:webzardo@webzardstudios.com" className="text-muted-foreground hover:text-foreground">
+                    webzardo@webzardstudios.com
                   </a>
                 </div>
               </div>

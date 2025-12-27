@@ -44,7 +44,7 @@ export default function TermsOfService() {
 
             <h2 className="text-xl font-medium text-foreground mt-8 mb-4">Contact</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              For questions about these terms, contact us at webzardo@gmail.com or +91 9304077781.
+              For questions about these terms, contact us at webzardo@webzardstudios.com or +91 9304077781.
             </p>
           </div>
         </div>

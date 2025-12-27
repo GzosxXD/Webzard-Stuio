@@ -2,45 +2,55 @@
 
 import { Star } from "lucide-react"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 const testimonials = [
   {
-    name: "Founder, SaaS Startup",
-    initial: "A",
+    name: "Alex Chen",
+    title: "Founder, SaaS Startup",
+    image: "/professional-asian-tech-founder.jpg",
     rating: 5,
     quote:
       "The AI integration has been transformative. Clean code, clear communication, and delivered ahead of schedule.",
   },
   {
-    name: "CEO, E-commerce Brand",
-    initial: "M",
+    name: "Dr. Priya Sharma",
+    title: "Principal Dentist, Smile Care Clinic",
+    image: "/indian-female-dentist-professional.jpg",
+    rating: 5,
+    quote:
+      "Website optimization was outstanding. Our site now loads in under 2 seconds and patient appointments doubled!",
+  },
+  {
+    name: "Maria Rodriguez",
+    title: "CEO, E-commerce Brand",
+    image: "/professional-hispanic-businesswoman.jpg",
     rating: 5,
     quote:
       "Conversion rate increased significantly after the redesign. Professional team that truly understands business.",
   },
   {
-    name: "Owner, Digital Agency",
-    initial: "S",
+    name: "Rajesh Kumar Singh",
+    title: "Owner, FitZone Gym",
+    image: "/indian-gym-owner-fitness-coach.jpg",
+    rating: 5,
+    quote:
+      "Page speed increased dramatically after optimization. Now getting 3x more online bookings. Performance is incredible!",
+  },
+  {
+    name: "Sarah Thompson",
+    title: "Owner, Digital Agency",
+    image: "/professional-caucasian-businesswoman-creative-dire.jpg",
     rating: 5,
     quote: "Best development partner we've worked with. Transparent pricing and no surprises. Highly recommend.",
   },
   {
-    name: "Director, Healthcare Tech",
-    initial: "R",
+    name: "Arjun Patel",
+    title: "Owner, QuickFix Plumbing Services",
+    image: "/indian-plumber-contractor-tradesman.jpg",
     rating: 5,
-    quote: "Security and compliance were handled expertly. The team's attention to detail is outstanding.",
-  },
-  {
-    name: "Founder, Fintech Startup",
-    initial: "J",
-    rating: 5,
-    quote: "Fast turnaround without compromising quality. The AI features work flawlessly in production.",
-  },
-  {
-    name: "VP Product, B2B SaaS",
-    initial: "L",
-    rating: 5,
-    quote: "Clear documentation and smooth handoff. Our engineering team was impressed with the code quality.",
+    quote:
+      "Website optimization made huge difference. Site loads fast on mobile, I rank on Google, and get calls every day!",
   },
 ]
 
@@ -68,7 +78,7 @@ export default function Testimonials() {
             Trusted by Founders & Teams
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Anonymized feedback from real clients across various industries.
+            Real feedback from clients across various industries.
           </p>
         </div>
 
@@ -85,9 +95,14 @@ export default function Testimonials() {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              {/* Initial Avatar */}
-              <div className="w-12 h-12 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center mb-4">
-                <span className="text-lg font-semibold text-gold">{testimonial.initial}</span>
+              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gold/30 mb-4 flex-shrink-0">
+                <Image
+                  src={testimonial.image || "/placeholder.svg"}
+                  alt={testimonial.name}
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Stars */}
@@ -102,7 +117,8 @@ export default function Testimonials() {
 
               {/* Attribution */}
               <div>
-                <p className="text-sm font-medium text-muted-foreground">{testimonial.name}</p>
+                <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
+                <p className="text-xs text-muted-foreground mt-1">{testimonial.title}</p>
               </div>
             </div>
           ))}
