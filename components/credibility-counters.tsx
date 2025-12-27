@@ -68,9 +68,9 @@ export default function CredibilityCounters() {
     <section className="py-16 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
-          <Counter end={48} suffix="+" label="Projects Delivered" />
-          <Counter end={23} suffix="+" label="Early Clients" />
-          <Counter end={37} suffix="%+" label="Avg Conversion Lift" />
+          <Counter end={16} suffix="+" label="Projects Delivered" />
+          <Counter end={14} suffix="+" label="Happy Clients" />
+          <Counter end={38} suffix="%" label="Avg Traffic Growth" />
         </div>
         <p className="text-center text-xs text-muted-foreground mt-8 italic">Based on internal data</p>
       </div>

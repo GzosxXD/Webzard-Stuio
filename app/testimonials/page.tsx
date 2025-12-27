@@ -121,6 +121,10 @@ export default function TestimonialsPage() {
             <p className="mt-4 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
               Real feedback from real clients across diverse industries.
             </p>
+            <p className="mt-2 text-sm text-muted-foreground/70 italic max-w-2xl mx-auto">
+              *Some client identities may be anonymized or details adjusted per their privacy requests while maintaining
+              the accuracy of results and feedback.
+            </p>
           </div>
 
           {/* Testimonials Grid */}
@@ -171,16 +175,16 @@ export default function TestimonialsPage() {
           {/* Stats Section */}
           <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-16 sm:mt-24">
             <div className="text-center">
-              <p className="text-3xl sm:text-5xl font-bold text-gold">48+</p>
+              <p className="text-3xl sm:text-5xl font-bold text-gold">16+</p>
               <p className="mt-2 text-sm sm:text-base text-muted-foreground">Projects Delivered</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl sm:text-5xl font-bold text-gold">23+</p>
+              <p className="text-3xl sm:text-5xl font-bold text-gold">14+</p>
               <p className="mt-2 text-sm sm:text-base text-muted-foreground">Happy Clients</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl sm:text-5xl font-bold text-gold">37%+</p>
-              <p className="mt-2 text-sm sm:text-base text-muted-foreground">Avg Growth</p>
+              <p className="text-3xl sm:text-5xl font-bold text-gold">38%</p>
+              <p className="mt-2 text-sm sm:text-base text-muted-foreground">Avg Traffic Growth</p>
             </div>
           </div>
         </div>

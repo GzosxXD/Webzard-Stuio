@@ -6,51 +6,83 @@ import Footer from "@/components/footer"
 const projects = [
   {
     id: 1,
-    title: "Evergreen Dental",
-    category: "Healthcare",
+    title: "TechFlow AI Platform",
+    category: "Software/SaaS",
     description:
-      "A comprehensive digital transformation for a family dental practice. Features patient appointment scheduling, insurance verification, treatment information, and educational resources to improve patient engagement and streamline operations.",
-    image: "/modern-dental-clinic-website-professional-clean.jpg",
+      "AI-powered SaaS platform transformation with advanced machine learning integrations, real-time data processing, and intelligent automation. Built with scalable architecture to handle enterprise-level workloads and seamless third-party API integrations.",
+    image: "/modern-ai-saas-dashboard-interface-clean-design.jpg",
   },
   {
     id: 2,
-    title: "Summit Realty",
-    category: "Real Estate",
+    title: "Luxe Fashion Boutique",
+    category: "E-commerce",
     description:
-      "Luxury real estate platform featuring advanced property search with filters, virtual tours, agent profiles, mortgage calculators, and neighborhood guides. Integrated lead capture system with automated follow-ups for higher conversion rates.",
-    image: "/luxury-real-estate-website-modern-property-listing.jpg",
+      "High-conversion e-commerce platform redesign for luxury fashion brand. Features personalized product recommendations, virtual try-on technology, seamless checkout experience, and integrated loyalty program driving significant revenue growth.",
+    image: "/elegant-fashion-ecommerce-website-luxury-design.jpg",
   },
   {
     id: 3,
-    title: "Craft & Barrel",
-    category: "Restaurant",
+    title: "FitZone Gym & Fitness Studio",
+    category: "Fitness & Wellness",
     description:
-      "An atmospheric online presence for an upscale gastropub featuring seasonal menus with dietary filters, online reservation system, private event booking, craft cocktail gallery, and chef profiles to showcase culinary expertise.",
-    image: "/upscale-restaurant-website-dark-elegant-food-photo.jpg",
+      "Complete website optimization and rebuild for fitness studio featuring online class booking, member portal, real-time schedule updates, trainer profiles, and mobile-first design. Performance optimization resulted in dramatic speed improvements and tripled online bookings.",
+    image: "/modern-fitness-gym-website-energetic-design.jpg",
   },
   {
     id: 4,
-    title: "FitCore Studio",
-    category: "Fitness",
+    title: "Smile Care Dental Clinic",
+    category: "Healthcare",
     description:
-      "Dynamic fitness studio platform with real-time class schedules, member portal, automated booking confirmations, trainer bios, workout programs, nutrition guides, and progress tracking to enhance member experience and reduce administrative overhead.",
-    image: "/modern-fitness-gym-studio-website-energetic-workou.jpg",
+      "Professional dental practice website with comprehensive optimization focused on speed and user experience. Features online appointment scheduling, patient education resources, treatment information, insurance details, and HIPAA-compliant forms. Site performance dramatically improved to under 2-second load times.",
+    image: "/professional-dental-clinic-website-clean-medical-d.jpg",
   },
   {
     id: 5,
-    title: "Monarch Law Group",
-    category: "Legal",
+    title: "Creative Minds Agency",
+    category: "Digital Services",
     description:
-      "Professional law firm website with sophisticated design, detailed attorney profiles, practice area expertise, case results, client testimonials, secure contact forms for confidential inquiries, and legal resources library to build trust and credibility.",
-    image: "/professional-law-firm-website-elegant-navy-justice.jpg",
+      "Full-service digital agency platform showcasing portfolio work, service offerings, and client testimonials. Built with transparent pricing structure, project management integration, and client portal for seamless collaboration. Now their recommended development partner.",
+    image: "/modern-creative-digital-agency-website-portfolio.jpg",
   },
   {
     id: 6,
-    title: "Bloom Boutique",
-    category: "E-commerce",
+    title: "QuickFix Plumbing Services",
+    category: "Home Services",
     description:
-      "Beautiful e-commerce platform for a flower shop with product categories, custom arrangement builder, delivery scheduling, occasion-based recommendations, subscription services, and POS integration for seamless order management.",
-    image: "/beautiful-flower-shop-ecommerce-website-elegant-pi.jpg",
+      "Complete website build and SEO optimization for local plumbing business. Features emergency contact system, service area mapping, before/after project galleries, customer reviews, and mobile-optimized design. Massive improvements in local search visibility and lead generation.",
+    image: "/professional-plumbing-services-website-mobile-frie.jpg",
+  },
+  {
+    id: 7,
+    title: "MedTech Solutions",
+    category: "Healthcare Tech",
+    description:
+      "HIPAA-compliant healthcare technology platform with advanced security features, patient data management, and regulatory compliance built-in. Expert implementation of healthcare regulations with attention to detail and robust architecture for enterprise healthcare systems.",
+    image: "/healthcare-technology-platform-medical-interface-s.jpg",
+  },
+  {
+    id: 8,
+    title: "Spice Route Restaurant",
+    category: "Restaurant & Hospitality",
+    description:
+      "Complete restaurant website rebuild and optimization featuring online ordering system, menu showcase with dietary filters, table reservations, catering inquiries, and mobile-first design. Lightning-fast performance and seamless ordering experience resulted in 150% increase in online orders.",
+    image: "/elegant-restaurant-website-food-photography-dark-t.jpg",
+  },
+  {
+    id: 9,
+    title: "FinanceFlow Platform",
+    category: "Financial Tech",
+    description:
+      "Secure fintech platform with advanced AI features for financial analysis and reporting. Fast development turnaround with production-ready code, comprehensive testing, and zero-downtime launch. Built with security-first architecture and responsive support infrastructure.",
+    image: "/modern-fintech-platform-dashboard-financial-interf.jpg",
+  },
+  {
+    id: 10,
+    title: "Enterprise Cloud Solutions",
+    category: "Enterprise SaaS",
+    description:
+      "B2B SaaS platform for enterprise clients with comprehensive documentation, clean architecture, and seamless team handoff. Impressed engineering teams with code quality and became the internal development partner for future projects. Scalable infrastructure for enterprise workloads.",
+    image: "/professional-b2b-saas-platform-enterprise-dashboar.jpg",
   },
 ]
 

@@ -154,6 +154,281 @@ const projects = [
       increase: "+40%",
     },
   },
+  {
+    id: 7,
+    title: "TechFlow AI Platform",
+    category: "Software/SaaS",
+    image: "/modern-ai-saas-dashboard-interface.jpg",
+    business:
+      "Fast-growing SaaS startup providing AI-powered workflow automation for enterprise clients. Founded 2 years ago, serving over 500 businesses with a team of 12 engineers and product specialists focused on cutting-edge machine learning solutions.",
+    challenge:
+      "Their platform needed advanced AI integration capabilities that their in-house team couldn't implement within aggressive timeline. Required clean, maintainable code that could scale with rapid user growth and complex third-party API integrations.",
+    solution:
+      "Implemented comprehensive AI integration layer with machine learning pipelines, real-time data processing, intelligent automation workflows, and seamless API connectivity. Delivered modular, well-documented code ahead of schedule with thorough testing and deployment support.",
+    outcome:
+      "User engagement increased by 45% within first month of launch. Platform stability improved with zero critical issues post-deployment. Client praised clear communication throughout development and code quality that impressed their engineering team. Features released 2 weeks ahead of schedule.",
+    results: [
+      "45% increase in engagement",
+      "Zero critical issues",
+      "Delivered ahead of schedule",
+      "Scalable architecture",
+    ],
+    traffic: {
+      before: "12,400",
+      after: "17,980",
+      increase: "+45%",
+    },
+    testimonial: {
+      name: "Alex Chen",
+      role: "Founder, SaaS Startup",
+      quote:
+        "The AI integration has been transformative for our platform. Clean code, clear communication, and delivered ahead of schedule. Couldn't ask for a better developer.",
+    },
+  },
+  {
+    id: 8,
+    title: "Luxe Fashion Boutique",
+    category: "E-commerce",
+    image: "/elegant-luxury-fashion-ecommerce-website.jpg",
+    business:
+      "Premium e-commerce brand specializing in luxury fashion and accessories. Established 5 years ago with curated collections and personalized shopping experience. Revenue of $2M annually with focus on high-end market segment and exceptional customer service.",
+    challenge:
+      "Existing website had poor conversion rates despite high traffic. Checkout abandonment was 78%, mobile experience was suboptimal, product discovery was difficult, and site didn't reflect the luxury brand positioning. Needed complete redesign focused on conversions and user psychology.",
+    solution:
+      "Complete redesign with conversion-focused architecture including personalized product recommendations using behavioral data, streamlined checkout process, high-quality imagery optimization, mobile-first responsive design, abandoned cart recovery system, and integrated loyalty rewards program. Implemented A/B testing framework for continuous optimization.",
+    outcome:
+      "Revenue increased by 60% in first quarter post-launch. Conversion rate improved from 1.2% to 3.8%. Average order value increased by 35%. Mobile sales grew from 30% to 55% of total revenue. Customer praised understanding of business goals and user psychology throughout the project.",
+    results: ["60% revenue increase Q1", "3.8% conversion rate", "35% higher order value", "55% mobile sales"],
+    traffic: {
+      before: "24,800",
+      after: "33,480",
+      increase: "+35%",
+    },
+    testimonial: {
+      name: "Maria Rodriguez",
+      role: "CEO, E-commerce Brand",
+      quote:
+        "Conversion rate increased significantly after the redesign. Working directly with a skilled developer who truly understands business goals and user psychology. Highly recommended.",
+    },
+  },
+  {
+    id: 9,
+    title: "FitZone Gym & Fitness Studio",
+    category: "Fitness & Wellness",
+    image: "/modern-fitness-gym-website-energetic.jpg",
+    business:
+      "Popular local fitness studio with 3 locations offering group classes, personal training, and wellness programs. Serving 800+ members with 15 certified instructors. Known for community atmosphere and results-driven programs with strong local reputation.",
+    challenge:
+      "Website was painfully slow (8+ second load time), outdated design didn't appeal to their target demographic, no online booking system leading to missed opportunities, and poor mobile experience. Online booking inquiries were stagnant despite growing local interest in fitness.",
+    solution:
+      "Complete website rebuild with performance optimization as top priority. Implemented aggressive image optimization, code splitting, lazy loading, CDN integration, integrated real-time class booking system, mobile-first responsive design, member portal with progress tracking, and social proof elements with transformation stories. Optimized for Core Web Vitals.",
+    outcome:
+      "Page speed improved by 85% (8s to 1.2s load time). Online bookings increased from 15/month to 45/month (tripled). Mobile traffic increased by 120% due to better experience. Member retention improved by 18% thanks to better engagement tools. Client reports phone inquiries also increased due to professional appearance.",
+    results: ["85% speed improvement", "Bookings tripled", "120% more mobile traffic", "18% better retention"],
+    traffic: {
+      before: "3,200",
+      after: "7,040",
+      increase: "+120%",
+    },
+    testimonial: {
+      name: "Rajesh Kumar Singh",
+      role: "Owner, FitZone Gym & Fitness Studio",
+      quote:
+        "Our website was slow and outdated. After Webzard optimized it, page speed increased dramatically and we started getting 3x more online bookings. The performance improvements are incredible!",
+    },
+  },
+  {
+    id: 10,
+    title: "Smile Care Dental Clinic",
+    category: "Healthcare",
+    image: "/professional-dental-clinic-website-clean.jpg",
+    business:
+      "Family dental practice serving the community for 12 years with 3 dentists and modern facilities. Specializing in cosmetic dentistry, family care, and emergency services. Building reputation on patient comfort and advanced dental technology with 2,500+ active patients.",
+    challenge:
+      "Website was extremely slow (7-second load time) causing high bounce rates. No online appointment booking meant staff spent hours on phone scheduling. Mobile experience was broken. Outdated design didn't reflect their modern practice and advanced technology. Losing patients to competitors with better digital presence.",
+    solution:
+      "Comprehensive website optimization and redesign focused on performance and user experience. Implemented server-side rendering, image optimization, minification, caching strategies, integrated appointment scheduling system, patient forms, treatment information with video explainers, insurance verification tool, mobile-first design, and local SEO optimization. Achieved under 2-second load time.",
+    outcome:
+      "Page load time reduced by 75% (7s to 1.7s). Patient appointment requests doubled from 30/month to 60/month. Bounce rate decreased from 68% to 32%. Phone call volume decreased by 40% as more patients used online booking. New patient acquisition increased by 28% with improved Google rankings.",
+    results: ["75% faster load time", "2x appointment requests", "68% to 32% bounce rate", "28% more new patients"],
+    traffic: {
+      before: "4,200",
+      after: "9,240",
+      increase: "+120%",
+    },
+    testimonial: {
+      name: "Dr. Priya Sharma",
+      role: "Principal Dentist, Smile Care Dental Clinic",
+      quote:
+        "The optimization work they did was outstanding. Our website now loads in under 2 seconds, and patient appointment requests have doubled. They understood exactly what a medical practice needs.",
+    },
+  },
+  {
+    id: 11,
+    title: "Creative Minds Agency",
+    category: "Digital Services",
+    image: "/modern-creative-digital-agency-portfolio-website.jpg",
+    business:
+      "Boutique digital marketing agency offering branding, web design, and marketing services to small and medium businesses. Team of 8 creative professionals with diverse portfolio across industries. Known for personalized service and creative solutions.",
+    challenge:
+      "Needed reliable development partner for client projects as their in-house developer left. Required transparent pricing, consistent quality, and ability to white-label services. Previous freelancers had inconsistent quality and communication issues causing project delays and client dissatisfaction.",
+    solution:
+      "Established ongoing partnership model with clear pricing structure, service level agreements, project management integration, white-label solutions, comprehensive documentation, regular communication cadence, code review processes, and dedicated support channel. Delivered multiple client projects with consistent high quality.",
+    outcome:
+      "Became their primary recommended development partner for all web projects. No project delays in 6 months of partnership. Client satisfaction scores improved by 32%. Agency able to take on 40% more projects due to reliable development capacity. Revenue increased by $180K annually from expanded service offerings.",
+    results: [
+      "Top development partner",
+      "Zero project delays",
+      "32% better client satisfaction",
+      "40% project capacity increase",
+    ],
+    traffic: {
+      before: "8,400",
+      after: "10,920",
+      increase: "+30%",
+    },
+    testimonial: {
+      name: "Sarah Thompson",
+      role: "Owner, Digital Agency",
+      quote:
+        "Best development partner we've worked with. Transparent pricing, no surprises, and exceptional code quality. Now a core part of our offering.",
+    },
+  },
+  {
+    id: 12,
+    title: "QuickFix Plumbing Services",
+    category: "Home Services",
+    image: "/placeholder.svg?height=600&width=1200",
+    business:
+      "Local plumbing service company serving residential and commercial clients for 8 years. Family-owned business with 4 licensed plumbers offering emergency services, repairs, and installations. Strong reputation for quality work and customer service.",
+    challenge:
+      "No website at all—relying entirely on word-of-mouth and expensive paid advertising. Competitors with websites were capturing online searches. Couldn't showcase work portfolio or customer reviews. Missing calls during job sites. Needed affordable web presence to compete and generate organic leads.",
+    solution:
+      "Built mobile-first website optimized for local search with emergency contact system, click-to-call buttons, service area mapping with geographic targeting, project gallery with before/after photos, customer review integration, service descriptions with transparent pricing, Google Business Profile optimization, and local SEO implementation. Focused on lead generation and mobile experience.",
+    outcome:
+      "Organic website traffic grew from 0 to 2,200 monthly visitors in 6 months. Generates 180% more leads monthly (from 12 to 34). Ranks on first page Google for 15 local plumbing keywords. Phone inquiries increased by 220% overall. Reduced paid advertising spending by 60% while increasing total leads. ROI recouped within 2 months.",
+    results: ["180% more monthly leads", "First page Google rankings", "220% more inquiries", "60% less ad spending"],
+    traffic: {
+      before: "0",
+      after: "2,200",
+      increase: "+∞",
+    },
+    testimonial: {
+      name: "Arjun Patel",
+      role: "Owner, QuickFix Plumbing Services",
+      quote:
+        "I never thought a website could make such a difference. They optimized everything - now customers find me on Google, my site loads fast on mobile, and I get calls every day. Best investment for my business!",
+    },
+  },
+  {
+    id: 13,
+    title: "MedTech Solutions",
+    category: "Healthcare Tech",
+    image: "/placeholder.svg?height=600&width=1200",
+    business:
+      "Healthcare technology company providing patient management and telehealth solutions to medical practices. Serving 50+ clinics with 100,000+ patient records. Focus on HIPAA compliance, security, and improving patient care outcomes through technology.",
+    challenge:
+      "Building HIPAA-compliant platform with strict security and regulatory requirements. Needed expert understanding of healthcare regulations, data encryption, secure authentication, audit logging, and compliance documentation. Previous developer lacked healthcare expertise causing compliance issues and delays.",
+    solution:
+      "Implemented comprehensive HIPAA-compliant architecture with end-to-end encryption, secure authentication with MFA, role-based access control, comprehensive audit logging, encrypted data storage, secure API design, compliance documentation, penetration testing, and ongoing security monitoring. Delivered within timeline with all regulatory requirements met.",
+    outcome:
+      "Achieved full HIPAA compliance on schedule. Passed security audit with zero critical findings. Platform launched serving all 50 clinics without security incidents. Client praised deep understanding of healthcare regulations and attention to detail. System handles 100,000+ patient records securely. Ongoing support maintains compliance with evolving regulations.",
+    results: ["Full HIPAA compliance", "Zero security incidents", "Passed security audit", "100K+ records secured"],
+    traffic: {
+      before: "6,800",
+      after: "8,840",
+      increase: "+30%",
+    },
+    testimonial: {
+      name: "Robert Johnson",
+      role: "Director, Healthcare Tech",
+      quote:
+        "Security and compliance were handled expertly. The attention to detail is outstanding, and they understand healthcare regulations inside and out.",
+    },
+  },
+  {
+    id: 14,
+    title: "Spice Route Restaurant",
+    category: "Restaurant & Hospitality",
+    image: "/placeholder.svg?height=600&width=1200",
+    business:
+      "Popular Indian restaurant known for authentic cuisine, spice blends, and family recipes. Established 10 years ago with loyal customer base. Offers dine-in, takeout, and catering services. Located in busy commercial district with high foot traffic and growing delivery demand.",
+    challenge:
+      "Old website was extremely slow (9-second load time) and not mobile-friendly. Online ordering system was clunky with high abandonment rate. Menu was difficult to navigate. Website didn't showcase food quality or restaurant atmosphere. Missing significant revenue from online orders as customers went to competitors with better ordering experience.",
+    solution:
+      "Complete rebuild with performance-first approach and integrated online ordering system. Implemented image optimization for food photography, progressive web app features, menu with dietary filters and allergen information, streamlined ordering flow with real-time order tracking, mobile-first responsive design, reservation system, catering inquiry form, and customer review showcase. Achieved 90% performance score and 1-second load time.",
+    outcome:
+      "Online orders increased by 150% in first 3 months (from 80/month to 200/month). Website speed improved by 90% (9s to 0.9s). Mobile orders grew from 40% to 72% of total online orders. Cart abandonment decreased from 65% to 22%. Average order value increased by 28% due to better menu discovery. Monthly online revenue increased by $12,000. ROI achieved in 6 weeks.",
+    results: [
+      "150% more online orders",
+      "90% speed improvement",
+      "72% orders from mobile",
+      "$12K more monthly revenue",
+    ],
+    traffic: {
+      before: "1,600",
+      after: "4,000",
+      increase: "+150%",
+    },
+    testimonial: {
+      name: "Vikram Mehta",
+      role: "Owner, Spice Route Restaurant",
+      quote:
+        "Our old website was killing our online orders. Webzard completely rebuilt and optimized it - now it's lightning fast, mobile-friendly, and orders have increased by 150%. The ROI has been phenomenal!",
+    },
+  },
+  {
+    id: 15,
+    title: "FinanceFlow Platform",
+    category: "Financial Tech",
+    image: "/placeholder.svg?height=600&width=1200",
+    business:
+      "Fintech startup providing financial analysis and reporting tools for small business owners. Founded 18 months ago with $2M seed funding. Serving 300+ businesses with automated bookkeeping, cash flow forecasting, and financial insights powered by AI.",
+    challenge:
+      "Needed to rapidly implement AI-powered financial features to meet investor milestones and competitive pressure. Required fast turnaround without compromising quality, security, or scalability. Previous development partner couldn't meet aggressive timeline causing funding concerns.",
+    solution:
+      "Implemented AI-powered financial analysis features including automated transaction categorization, predictive cash flow forecasting, anomaly detection, intelligent reporting, and natural language insights. Delivered production-ready code with comprehensive testing, security best practices, thorough documentation, and deployment support. Completed 3-week ahead of deadline.",
+    outcome:
+      "Launched AI features with zero downtime or critical bugs. User engagement increased significantly with 78% of users actively using new AI insights. Investor milestone achieved ahead of schedule securing Series A funding. Client praised responsive communication and support. Platform stability maintained with 99.9% uptime. Fast turnaround impressed board members.",
+    results: ["Zero downtime launch", "78% AI feature adoption", "Secured Series A funding", "99.9% uptime maintained"],
+    traffic: {
+      before: "8,600",
+      after: "11,180",
+      increase: "+30%",
+    },
+    testimonial: {
+      name: "Jessica Lee",
+      role: "Founder, Fintech Startup",
+      quote:
+        "Fast turnaround without compromising quality. The AI features work flawlessly in production. Always responsive when we need support.",
+    },
+  },
+  {
+    id: 16,
+    title: "Enterprise Cloud Solutions",
+    category: "Enterprise SaaS",
+    image: "/placeholder.svg?height=600&width=1200",
+    business:
+      "Established B2B SaaS company providing cloud infrastructure management tools for enterprise clients. 7 years old with 200+ enterprise customers including Fortune 500 companies. Engineering team of 25 with focus on reliability, security, and enterprise-grade features.",
+    challenge:
+      "Needed external development expertise for new product line while maintaining high code quality standards their engineering team expected. Required seamless handoff, excellent documentation, and code that their team could maintain long-term. Previous contractors delivered poor quality code causing technical debt.",
+    solution:
+      "Implemented new product features with enterprise-grade architecture, comprehensive inline documentation, detailed system design docs, clean code following their existing patterns, extensive unit and integration testing, code review process with their team, architectural decision records, deployment guides, and knowledge transfer sessions. Collaborated closely with their engineering team throughout.",
+    outcome:
+      "Engineering team impressed with code quality and architecture decisions. Smooth handoff with zero technical debt. Documentation exceeded their internal standards. Product launched successfully serving enterprise clients. Client adopted as internal development partner for future projects. Received praise from VP of Engineering in company-wide meeting. Became template for how they evaluate future external partners.",
+    results: ["Zero technical debt", "Exceeded doc standards", "Internal dev partner", "Engineering team praised"],
+    traffic: {
+      before: "18,400",
+      after: "23,920",
+      increase: "+30%",
+    },
+    testimonial: {
+      name: "Michael Brown",
+      role: "VP Product, B2B SaaS",
+      quote:
+        "Clear documentation and smooth handoff. Our engineers were impressed with the code quality and architecture. Set a new standard for partnerships.",
+    },
+  },
 ]
 
 export async function generateStaticParams() {
@@ -256,6 +531,20 @@ export default async function CaseStudyPage({
               ))}
             </div>
           </div>
+
+          {/* Testimonial */}
+          {project.testimonial && (
+            <div className="mb-16">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-8">What Our Client Says</h2>
+              <div className="p-8 bg-card rounded-2xl border border-border">
+                <p className="text-base text-muted-foreground leading-relaxed">{project.testimonial.quote}</p>
+                <div className="mt-4 flex items-center justify-center">
+                  <span className="text-lg sm:text-xl font-semibold text-foreground">{project.testimonial.name}</span>
+                  <span className="ml-2 text-sm text-muted-foreground">{project.testimonial.role}</span>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-8 bg-secondary/30 rounded-2xl border border-border">
