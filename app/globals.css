@@ -130,8 +130,8 @@
   }
 }
 
-/* Updated marquee animation to ensure continuous seamless looping */
-@keyframes marquee {
+/* Added right-to-left marquee animation */
+@keyframes marquee-rtl {
   0% {
     transform: translateX(0);
   }
@@ -140,12 +140,12 @@
   }
 }
 
-.animate-marquee {
-  animation: marquee 40s linear infinite;
+.animate-marquee-rtl {
+  animation: marquee-rtl 30s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee-rtl {
     animation: none;
   }
 }

@@ -4,14 +4,19 @@ import { Button } from "@/components/ui/button"
 const plans = [
   {
     name: "Starter",
-    originalPrice: "$200",
-    discountedPrice: "$170",
-    description: "Perfect for small businesses just getting started online.",
+    originalPrice: "$600",
+    discountedPrice: "$510",
+    description: "For early startups launching their first serious presence.",
     features: [
-      "Single page website",
-      "Mobile responsive design",
-      "Basic SEO setup",
-      "Contact form integration",
+      "Up to 3 conversion-focused pages",
+      "Home, About/Services, Contact",
+      "Mobile-first responsive design",
+      "Clear value proposition & CTA",
+      "SEO foundation (structure, metadata)",
+      "Secure contact form",
+      "Performance optimization baseline",
+      "Analytics & event tracking",
+      "Scalable architecture",
       "1 revision round",
       "1 month support",
     ],
@@ -19,124 +24,64 @@ const plans = [
     discount: true,
   },
   {
-    name: "Essential",
-    originalPrice: "$400",
-    discountedPrice: "$340",
-    description: "Great for businesses ready to establish their online presence.",
+    name: "Growth",
+    originalPrice: "$1,200",
+    discountedPrice: "$1,020",
+    description: "For startups and businesses expecting traction and growth.",
     features: [
-      "Up to 3 pages",
-      "Mobile responsive design",
-      "SEO optimization",
-      "Social media integration",
-      "2 revision rounds",
-      "Google Analytics setup",
-      "2 months support",
-    ],
-    popular: false,
-    discount: true,
-  },
-  {
-    name: "Professional",
-    originalPrice: "$500",
-    discountedPrice: "$425",
-    description: "Ideal for growing businesses that need more features.",
-    features: [
-      "Up to 5 pages",
-      "Custom design",
-      "Advanced SEO",
-      "Blog setup",
+      "Up to 8 structured pages",
+      "Home, 2-3 Service pages, About, Contact, Utility pages",
+      "Custom design system",
+      "Advanced SEO implementation",
+      "Backend integration ready",
+      "Performance optimization & caching",
+      "Security best practices",
+      "Analytics & funnel visibility",
+      "Scales to 12-15 pages without rebuild",
+      "Future-proof architecture",
       "3 revision rounds",
-      "Speed optimization",
       "3 months support",
-      "10-Day Money-Back Guarantee",
     ],
     popular: true,
     discount: true,
   },
   {
-    name: "Business",
-    originalPrice: "$800",
-    discountedPrice: "$680",
-    description: "For established businesses seeking comprehensive solutions.",
-    features: [
-      "Up to 8 pages",
-      "Premium design",
-      "E-commerce ready",
-      "AI chatbot integration",
-      "Priority support",
-      "Monthly analytics report",
-      "4 months support",
-    ],
-    popular: false,
-    discount: true,
-  },
-  {
-    name: "Advanced",
-    originalPrice: "$1,200",
-    discountedPrice: "$1,020",
-    description: "Complete solution for businesses with advanced requirements.",
-    features: [
-      "Up to 12 pages",
-      "Custom animations",
-      "Full e-commerce setup",
-      "CRM integration",
-      "Advanced AI features",
-      "Unlimited revisions",
-      "6 months support",
-      "Priority development queue",
-    ],
-    popular: false,
-    discount: true,
-  },
-  {
-    name: "Premium",
+    name: "Scale",
     originalPrice: "$2,000",
     discountedPrice: "$1,700",
-    description: "Enterprise-grade solution for ambitious businesses.",
+    description: "For serious businesses, funded startups, or complex products.",
     features: [
-      "Up to 20 pages",
-      "Custom functionality",
-      "Multi-language support",
-      "Advanced integrations",
-      "Dedicated account manager",
-      "White-label options",
-      "12 months support",
-      "SLA guarantee",
+      "Up to 15+ pages (structured)",
+      "Architecture-first planning",
+      "Advanced custom design system",
+      "Full backend integration",
+      "Authentication & role-based access",
+      "Advanced performance optimization",
+      "Enhanced security hardening",
+      "Analytics & growth tracking",
+      "Long-term expansion ready",
+      "5 revision rounds",
+      "6 months support",
     ],
     popular: false,
     discount: true,
   },
   {
     name: "Enterprise",
-    originalPrice: "$3,000+",
-    discountedPrice: "$2,550+",
-    description: "Complete digital transformation for large organizations.",
+    price: "Custom",
+    description: "For platforms, products, and businesses with complex requirements.",
     features: [
-      "Unlimited pages",
-      "Custom platform development",
-      "Enterprise AI solutions",
-      "Dedicated development team",
-      "24/7 priority support",
-      "On-demand development",
-      "Lifetime support options",
-      "White-glove service",
-    ],
-    popular: false,
-    discount: true,
-  },
-  {
-    name: "Custom",
-    price: "Contact Us",
-    description: "Tailored solutions for unique enterprise requirements.",
-    features: [
-      "Custom scope & timeline",
+      "Custom scope, timeline & milestones",
+      "Architecture-first system design",
       "Full-stack development",
-      "System architecture design",
-      "API & backend development",
-      "Database optimization",
-      "Security audits",
-      "Flexible payment terms",
-      "Ongoing partnership",
+      "Custom APIs & backend services",
+      "Database design & optimization",
+      "Authentication & permissions",
+      "Third-party integrations",
+      "Security audits & compliance",
+      "Performance & scalability",
+      "Dedicated support",
+      "Long-term technical partnership",
     ],
     popular: false,
     discount: false,
@@ -156,9 +101,14 @@ export default function Pricing() {
           <p className="mt-2 text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             One-time payment. No subscriptions. No hidden fees. Just high-quality websites delivered.
           </p>
+          <div className="mt-6 inline-block px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-500 rounded-lg shadow-lg">
+            <p className="text-sm font-bold text-white flex items-center gap-2">
+              <span>🎉</span> New Year Sale: 15% OFF All Plans <span>✨</span>
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -170,8 +120,8 @@ export default function Pricing() {
             >
               {plan.discount && (
                 <div className="absolute -top-2 -right-2 rotate-6">
-                  <div className="bg-gradient-to-br from-red-600 to-green-700 text-white px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wide shadow-lg border-2 border-gold/40 flex items-center gap-1">
-                    <span>🎄</span> 15% OFF
+                  <div className="bg-gradient-to-br from-amber-600 to-orange-600 text-white px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wide shadow-lg border-2 border-gold/40 flex items-center gap-1">
+                    <span>🎉</span> 15% OFF
                   </div>
                 </div>
               )}

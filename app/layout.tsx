@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import "./globals.css"
+import NewYearBanner from "@/components/christmas-banner"
+import Navbar from "@/components/navbar"
 
 const _inter = Inter({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -42,14 +44,18 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Webzard Studios",
               url: "https://www.webzardstudios.com",
-              email: "webzardo@gmail.com",
+              email: "webzardo@webzardstudios.com",
             }),
           }}
         />
         <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js" defer></script>
         <script src="https://files.bpcontent.cloud/2025/12/18/16/20251218160236-3CR5L61B.js" defer></script>
       </head>
-      <body className={`font-sans antialiased`}>{children}</body>
+      <body className={`font-sans antialiased`}>
+        <NewYearBanner />
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }

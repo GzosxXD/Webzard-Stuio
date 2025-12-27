@@ -6,11 +6,11 @@ export default function Footer() {
 
   const footerLinks = {
     company: [
-      { label: "Services", href: "#services" },
-      { label: "About", href: "#about" },
-      { label: "Portfolio", href: "#portfolio" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "Testimonials", href: "#testimonials" },
+      { label: "Services", href: "/services" },
+      { label: "About", href: "/about" },
+      { label: "Portfolio", href: "/portfolio" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "Testimonials", href: "/testimonials" },
     ],
     support: [
       { label: "Contact", href: "#contact" },
@@ -27,11 +27,11 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/favicon-32x32.png"
+                src="/android-chrome-192x192.png"
                 alt="Webzard Studios"
                 width={40}
                 height={40}
-                className="w-10 h-10 brightness-0 invert"
+                className="w-10 h-10"
               />
               <span className="text-xl font-medium">Webzard Studios</span>
             </div>
@@ -43,11 +43,11 @@ export default function Footer() {
             <div className="mt-6 space-y-2">
               <div className="flex items-center gap-2 text-sm text-primary-foreground/70">
                 <Mail className="w-4 h-4" />
-                <span>webzardo@gmail.com</span>
+                <span>webzardo@webzardstudios.com</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-primary-foreground/70">
                 <Phone className="w-4 h-4" />
-                <span>+91 9304077781</span>
+                <span>+91 9304087781</span>
               </div>
               <p className="text-xs text-primary-foreground/50 mt-2">Remote studio · Response within 24 hours</p>
             </div>
