@@ -1,10 +1,11 @@
-import { Check, CreditCard } from "lucide-react"
+import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const plans = [
   {
     name: "Starter",
-    price: "$200",
+    originalPrice: "$200",
+    discountedPrice: "$170",
     description: "Perfect for small businesses just getting started online.",
     features: [
       "Single page website",
@@ -12,12 +13,15 @@ const plans = [
       "Basic SEO setup",
       "Contact form integration",
       "1 revision round",
+      "1 month support",
     ],
     popular: false,
+    discount: true,
   },
   {
     name: "Essential",
-    price: "$400",
+    originalPrice: "$400",
+    discountedPrice: "$340",
     description: "Great for businesses ready to establish their online presence.",
     features: [
       "Up to 3 pages",
@@ -26,12 +30,15 @@ const plans = [
       "Social media integration",
       "2 revision rounds",
       "Google Analytics setup",
+      "2 months support",
     ],
     popular: false,
+    discount: true,
   },
   {
     name: "Professional",
-    price: "$500",
+    originalPrice: "$500",
+    discountedPrice: "$425",
     description: "Ideal for growing businesses that need more features.",
     features: [
       "Up to 5 pages",
@@ -40,12 +47,16 @@ const plans = [
       "Blog setup",
       "3 revision rounds",
       "Speed optimization",
+      "3 months support",
+      "10-Day Money-Back Guarantee",
     ],
     popular: true,
+    discount: true,
   },
   {
     name: "Business",
-    price: "$800",
+    originalPrice: "$800",
+    discountedPrice: "$680",
     description: "For established businesses seeking comprehensive solutions.",
     features: [
       "Up to 8 pages",
@@ -54,68 +65,81 @@ const plans = [
       "AI chatbot integration",
       "Priority support",
       "Monthly analytics report",
+      "4 months support",
     ],
     popular: false,
+    discount: true,
   },
   {
-    name: "Premium",
-    price: "$1,000",
-    description: "Advanced features for businesses with complex needs.",
+    name: "Advanced",
+    originalPrice: "$1,200",
+    discountedPrice: "$1,020",
+    description: "Complete solution for businesses with advanced requirements.",
     features: [
       "Up to 12 pages",
       "Custom animations",
       "Full e-commerce setup",
       "CRM integration",
+      "Advanced AI features",
       "Unlimited revisions",
       "6 months support",
+      "Priority development queue",
     ],
     popular: false,
+    discount: true,
+  },
+  {
+    name: "Premium",
+    originalPrice: "$2,000",
+    discountedPrice: "$1,700",
+    description: "Enterprise-grade solution for ambitious businesses.",
+    features: [
+      "Up to 20 pages",
+      "Custom functionality",
+      "Multi-language support",
+      "Advanced integrations",
+      "Dedicated account manager",
+      "White-label options",
+      "12 months support",
+      "SLA guarantee",
+    ],
+    popular: false,
+    discount: true,
   },
   {
     name: "Enterprise",
-    price: "$1,500",
-    description: "Complete digital transformation for ambitious businesses.",
+    originalPrice: "$3,000+",
+    discountedPrice: "$2,550+",
+    description: "Complete digital transformation for large organizations.",
     features: [
       "Unlimited pages",
-      "Custom functionality",
-      "Advanced AI features",
-      "Multi-language support",
-      "Dedicated account manager",
-      "12 months support",
+      "Custom platform development",
+      "Enterprise AI solutions",
+      "Dedicated development team",
+      "24/7 priority support",
+      "On-demand development",
+      "Lifetime support options",
+      "White-glove service",
     ],
     popular: false,
+    discount: true,
   },
   {
     name: "Custom",
     price: "Contact Us",
     description: "Tailored solutions for unique enterprise requirements.",
     features: [
-      "Custom scope",
-      "Enterprise integrations",
-      "Dedicated team",
-      "SLA guarantee",
-      "On-demand development",
-      "White-glove service",
+      "Custom scope & timeline",
+      "Full-stack development",
+      "System architecture design",
+      "API & backend development",
+      "Database optimization",
+      "Security audits",
+      "Flexible payment terms",
+      "Ongoing partnership",
     ],
     popular: false,
-  },
-]
-
-const paymentMilestones = [
-  {
-    percentage: "30%",
-    title: "Advance Payment",
-    description: "To initiate the project and reserve the development slot.",
-  },
-  {
-    percentage: "80%",
-    title: "After Demo Review",
-    description: "Paid once the working demo is shown and approved.",
-  },
-  {
-    percentage: "100%",
-    title: "Final Payment on Delivery",
-    description: "Paid when the complete website is delivered and handed over.",
+    discount: false,
   },
 ]
 
@@ -129,7 +153,7 @@ export default function Pricing() {
           <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-extralight tracking-tight text-foreground text-balance">
             Simple, Transparent Pricing
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-2 text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             One-time payment. No subscriptions. No hidden fees. Just high-quality websites delivered.
           </p>
         </div>
@@ -144,6 +168,14 @@ export default function Pricing() {
                   : "border-border bg-card"
               }`}
             >
+              {plan.discount && (
+                <div className="absolute -top-2 -right-2 rotate-6">
+                  <div className="bg-gradient-to-br from-red-600 to-green-700 text-white px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wide shadow-lg border-2 border-gold/40 flex items-center gap-1">
+                    <span>🎄</span> 15% OFF
+                  </div>
+                </div>
+              )}
+
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="px-3 py-1 text-xs font-medium bg-gold text-accent-foreground rounded-full">
@@ -154,7 +186,16 @@ export default function Pricing() {
               <div className="mb-4 sm:mb-6">
                 <h3 className="text-lg font-medium text-foreground">{plan.name}</h3>
                 <div className="mt-2">
-                  <span className="text-2xl sm:text-3xl font-light text-foreground">{plan.price}</span>
+                  {plan.discount ? (
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <span className="text-xl sm:text-2xl font-light text-muted-foreground line-through decoration-2">
+                        {plan.originalPrice}
+                      </span>
+                      <span className="text-2xl sm:text-3xl font-light text-gold">{plan.discountedPrice}</span>
+                    </div>
+                  ) : (
+                    <span className="text-2xl sm:text-3xl font-light text-foreground">{plan.price}</span>
+                  )}
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{plan.description}</p>
               </div>
@@ -180,35 +221,6 @@ export default function Pricing() {
           ))}
         </div>
 
-        <div className="mt-12 sm:mt-20">
-          <div className="text-center mb-8 sm:mb-10">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-extralight tracking-tight text-foreground">
-              Simple & Transparent Payment Structure
-            </h3>
-            <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-              We follow milestone-based payments so you only pay as progress is delivered.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
-            {paymentMilestones.map((milestone, index) => (
-              <div
-                key={index}
-                className="relative p-5 sm:p-6 rounded-xl bg-secondary/50 border border-border text-center"
-              >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-full bg-navy flex items-center justify-center">
-                  <CreditCard className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
-                </div>
-                <span className="block mt-3 sm:mt-4 text-2xl sm:text-3xl font-light text-gold">
-                  {milestone.percentage}
-                </span>
-                <h4 className="mt-2 text-sm sm:text-base font-medium text-foreground">{milestone.title}</h4>
-                <p className="mt-2 text-xs sm:text-sm text-muted-foreground">{milestone.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Payment Info */}
         <div className="mt-8 sm:mt-12 text-center">
           <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-secondary border border-border">
@@ -217,6 +229,7 @@ export default function Pricing() {
             </svg>
             <span className="text-xs sm:text-sm font-medium text-muted-foreground">Secure payments via PayPal</span>
           </div>
+          <p className="mt-4 text-xs text-muted-foreground">10-Day Money-Back Guarantee on all packages</p>
         </div>
       </div>
     </section>

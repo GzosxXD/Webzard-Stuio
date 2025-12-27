@@ -27,8 +27,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border" : "bg-transparent"
+      className={`sticky top-[66px] sm:top-[76px] z-40 transition-all duration-300 ${
+        isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border" : "bg-background"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -57,7 +57,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden md:block">
             <Button asChild className="bg-navy hover:bg-navy-light text-primary-foreground px-6">
               <a href="#contact">Get in Touch</a>
