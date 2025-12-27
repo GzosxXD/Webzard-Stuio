@@ -8,7 +8,7 @@ const projects = [
     id: 1,
     title: "Evergreen Dental",
     category: "Healthcare",
-    image: "/images/modern-dental-clinic-website-with-clean-whit.jpg",
+    image: "/modern-dental-clinic-website-clean-design.jpg",
     business:
       "Family dental practice serving the local community for over 15 years with a team of 5 dentists and 12 staff members. They specialize in general dentistry, cosmetic procedures, and pediatric care.",
     challenge:
@@ -28,7 +28,7 @@ const projects = [
     id: 2,
     title: "Summit Realty",
     category: "Real Estate",
-    image: "/images/luxury-real-estate-website-with-property-listings.jpg",
+    image: "/luxury-real-estate-property-listings-website.jpg",
     business:
       "Boutique real estate agency specializing in high-end residential properties in premium neighborhoods, with a focus on personalized service and luxury market expertise. Founded 8 years ago with a team of 6 experienced agents.",
     challenge:
@@ -48,7 +48,7 @@ const projects = [
     id: 3,
     title: "Craft & Barrel",
     category: "Restaurant",
-    image: "/images/elegant-restaurant-website-dark-theme-with-menu-an.jpg",
+    image: "/elegant-restaurant-website-dark-theme-menu.jpg",
     business:
       "Upscale gastropub known for craft cocktails, seasonal menus, and locally-sourced ingredients. Located in a vibrant downtown area, they host private events and offer a unique dining experience blending casual atmosphere with fine dining quality.",
     challenge:
@@ -68,7 +68,7 @@ const projects = [
     id: 4,
     title: "FitCore Studio",
     category: "Fitness",
-    image: "/images/fitness-gym-studio-website-modern-clean.jpg",
+    image: "/modern-fitness-gym-studio-website-energetic.jpg",
     business:
       "Boutique fitness studio offering HIIT, yoga, spin, and personal training sessions in a community-focused environment. With 3 locations and 15 instructors, they pride themselves on personalized attention and results-driven programs.",
     challenge:
@@ -88,7 +88,7 @@ const projects = [
     id: 5,
     title: "Monarch Law Group",
     category: "Legal",
-    image: "/images/professional-law-firm-website-elegant.jpg",
+    image: "/professional-law-firm-website-elegant-navy.jpg",
     business:
       "Mid-sized law firm with 8 attorneys specializing in family law, estate planning, and business law. Established 20 years ago with a reputation for personalized service and successful case outcomes.",
     challenge:
@@ -108,7 +108,7 @@ const projects = [
     id: 6,
     title: "Bloom Boutique",
     category: "E-commerce",
-    image: "/images/beautiful-flower-shop-ecommerce-website-with-produ.jpg",
+    image: "/beautiful-flower-shop-ecommerce-website-pink.jpg",
     business:
       "Family-owned flower shop serving the local area for 25 years, specializing in weddings, corporate events, and everyday arrangements. Known for fresh, locally-sourced flowers and personalized service.",
     challenge:

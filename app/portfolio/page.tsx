@@ -10,7 +10,7 @@ const projects = [
     category: "Healthcare",
     description:
       "A comprehensive digital transformation for a family dental practice. Features patient appointment scheduling, insurance verification, treatment information, and educational resources to improve patient engagement and streamline operations.",
-    image: "/modern-dental-clinic-website-clean-white-design-wi.jpg",
+    image: "/modern-dental-clinic-website-clean-design.jpg",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const projects = [
     category: "Real Estate",
     description:
       "Luxury real estate platform featuring advanced property search with filters, virtual tours, agent profiles, mortgage calculators, and neighborhood guides. Integrated lead capture system with automated follow-ups for higher conversion rates.",
-    image: "/luxury-real-estate-website-property-listings-moder.jpg",
+    image: "/luxury-real-estate-property-listings-website.jpg",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const projects = [
     category: "Restaurant",
     description:
       "An atmospheric online presence for an upscale gastropub featuring seasonal menus with dietary filters, online reservation system, private event booking, craft cocktail gallery, and chef profiles to showcase culinary expertise.",
-    image: "/elegant-restaurant-website-dark-theme-food-photogr.jpg",
+    image: "/elegant-restaurant-website-dark-theme-menu.jpg",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const projects = [
     category: "Fitness",
     description:
       "Dynamic fitness studio platform with real-time class schedules, member portal, automated booking confirmations, trainer bios, workout programs, nutrition guides, and progress tracking to enhance member experience and reduce administrative overhead.",
-    image: "/modern-fitness-gym-website-energetic-orange-design.jpg",
+    image: "/modern-fitness-gym-studio-website-energetic.jpg",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const projects = [
     category: "Legal",
     description:
       "Professional law firm website with sophisticated design, detailed attorney profiles, practice area expertise, case results, client testimonials, secure contact forms for confidential inquiries, and legal resources library to build trust and credibility.",
-    image: "/professional-law-firm-website-elegant-navy-blue-at.jpg",
+    image: "/professional-law-firm-website-elegant-navy.jpg",
   },
   {
     id: 6,
@@ -50,7 +50,7 @@ const projects = [
     category: "E-commerce",
     description:
       "Beautiful e-commerce platform for a flower shop with product categories, custom arrangement builder, delivery scheduling, occasion-based recommendations, subscription services, and POS integration for seamless order management.",
-    image: "/beautiful-flower-shop-ecommerce-website-pink-flora.jpg",
+    image: "/beautiful-flower-shop-ecommerce-website-pink.jpg",
   },
 ]
 
