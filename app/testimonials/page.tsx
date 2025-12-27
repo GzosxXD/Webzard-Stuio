@@ -12,7 +12,7 @@ const testimonials = [
     industry: "Software/SaaS",
     rating: 5,
     quote:
-      "The AI integration has been transformative for our platform. Clean code, clear communication, and they delivered ahead of schedule. Couldn't ask for a better team.",
+      "The AI integration has been transformative for our platform. Clean code, clear communication, and delivered ahead of schedule. Couldn't ask for a better developer.",
     result: "Increased user engagement by 45%",
   },
   {
@@ -22,7 +22,7 @@ const testimonials = [
     industry: "E-commerce",
     rating: 5,
     quote:
-      "Conversion rate increased significantly after the redesign. Professional team that truly understands business goals and user psychology. Highly recommended.",
+      "Conversion rate increased significantly after the redesign. Working directly with a skilled developer who truly understands business goals and user psychology. Highly recommended.",
     result: "Revenue increased by 60% in first quarter",
   },
   {
@@ -72,7 +72,7 @@ const testimonials = [
     industry: "Healthcare Tech",
     rating: 5,
     quote:
-      "Security and compliance were handled expertly. The team's attention to detail is outstanding, and they understand healthcare regulations inside and out.",
+      "Security and compliance were handled expertly. The attention to detail is outstanding, and they understand healthcare regulations inside and out.",
     result: "HIPAA compliant within timeline",
   },
   {
@@ -92,7 +92,7 @@ const testimonials = [
     industry: "Financial Tech",
     rating: 5,
     quote:
-      "Fast turnaround without compromising quality. The AI features work flawlessly in production. Their support team is always there when we need them.",
+      "Fast turnaround without compromising quality. The AI features work flawlessly in production. Always responsive when we need support.",
     result: "Launched with zero downtime",
   },
   {
@@ -102,7 +102,7 @@ const testimonials = [
     industry: "Enterprise SaaS",
     rating: 5,
     quote:
-      "Clear documentation and smooth handoff. Our engineering team was impressed with the code quality and architecture. Set a new standard for partnerships.",
+      "Clear documentation and smooth handoff. Our engineers were impressed with the code quality and architecture. Set a new standard for partnerships.",
     result: "Adopted as internal development partner",
   },
 ]

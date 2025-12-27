@@ -27,7 +27,7 @@ const testimonials = [
     image: "/professional-hispanic-businesswoman.jpg",
     rating: 5,
     quote:
-      "Conversion rate increased significantly after the redesign. Professional team that truly understands business.",
+      "Conversion rate increased significantly after the redesign. Professional developer who truly understands business goals.",
   },
   {
     name: "Rajesh Kumar Singh",
