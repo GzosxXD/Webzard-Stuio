@@ -103,8 +103,8 @@ export default function Hero() {
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed text-pretty">
-          We design and engineer high-performance websites, backend systems, and optimizations that improve speed,
-          conversions, and long-term reliability—without unnecessary rebuilds.
+          We optimize frontend, backend, and infrastructure so your site loads fast, stays stable, and turns visitors
+          into customers.
         </p>
 
         {/* CTAs */}
