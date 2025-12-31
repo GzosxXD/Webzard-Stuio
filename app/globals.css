@@ -103,29 +103,99 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Added background logo with responsive sizing */
-    background-image: url("/images/android-chrome-512x512.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 280px 280px;
-    background-attachment: fixed;
-    background-blend-mode: soft-light;
-    opacity: 0.98;
+    /* Removed background image to improve LCP and reduce CLS */
   }
   html {
     scroll-behavior: smooth;
   }
-}
 
-/* Responsive background logo */
-@media (min-width: 640px) {
-  body {
-    background-size: 400px 400px;
+  /* Prevent animation on reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    background-size: 500px 500px;
+/* GPU-accelerated animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) translateZ(0);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+/* Add smooth staggered fade-in animations */
+@keyframes fadeInStagger {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+.animate-stagger-1 {
+  animation: fadeInStagger 0.8s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-stagger-2 {
+  animation: fadeInStagger 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-stagger-3 {
+  animation: fadeInStagger 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-stagger-4 {
+  animation: fadeInStagger 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* Add smooth card hover animations */
+@keyframes cardHoverGlow {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(217, 174, 87, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(217, 174, 87, 0.2);
+  }
+}
+
+/* Add floating animation for interactive elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out 1s infinite;
 }

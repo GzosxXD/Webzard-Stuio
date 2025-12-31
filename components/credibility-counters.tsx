@@ -20,7 +20,10 @@ function Counter({ end, suffix, label }: CounterProps) {
           setIsVisible(true)
         }
       },
-      { threshold: 0.3 },
+      {
+        threshold: 0.3,
+        rootMargin: "0px 0px -100px 0px",
+      },
     )
 
     if (ref.current) {
@@ -34,27 +37,34 @@ function Counter({ end, suffix, label }: CounterProps) {
     if (!isVisible) return
 
     const duration = 2000
-    const steps = 60
-    const increment = end / steps
-    const stepTime = duration / steps
+    const startTime = performance.now()
+    let rafId: number
 
-    let current = 0
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= end) {
-        setCount(end)
-        clearInterval(timer)
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4)
+      const current = Math.floor(easeOutQuart * end)
+
+      setCount(current)
+
+      if (progress < 1) {
+        rafId = requestAnimationFrame(animate)
       } else {
-        setCount(Math.floor(current))
+        setCount(end)
       }
-    }, stepTime)
+    }
 
-    return () => clearInterval(timer)
+    rafId = requestAnimationFrame(animate)
+
+    return () => cancelAnimationFrame(rafId)
   }, [isVisible, end])
 
   return (
-    <div ref={ref} className="text-center">
-      <div className="text-4xl sm:text-5xl font-bold text-navy mb-2">
+    <div ref={ref} className="text-center min-h-[100px] flex flex-col justify-center">
+      <div className="text-4xl sm:text-5xl font-bold text-navy mb-2" style={{ willChange: "contents" }}>
         {count}
         {suffix}
       </div>

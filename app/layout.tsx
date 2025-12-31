@@ -5,8 +5,16 @@ import "./globals.css"
 import NewYearBanner from "@/components/christmas-banner"
 import Navbar from "@/components/navbar"
 
-const _inter = Inter({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+})
+const _geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+})
 
 export const metadata: Metadata = {
   title: "Webzard Studios | AI-Powered Web Development",
@@ -36,6 +44,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#1a3a52" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="preconnect" href="https://cdn.botpress.cloud" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://files.bpcontent.cloud" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.botpress.cloud" />
+        <link rel="dns-prefetch" href="https://files.bpcontent.cloud" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

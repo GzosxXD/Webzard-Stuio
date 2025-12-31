@@ -12,10 +12,19 @@ export default function Navbar() {
   const [isPricingOpen, setIsPricingOpen] = useState(false)
 
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener("scroll", handleScroll)
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -24,6 +33,7 @@ export default function Navbar() {
       className={`sticky top-6 z-40 transition-all duration-300 ${
         isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border" : "bg-background"
       }`}
+      style={{ willChange: "transform" }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -32,9 +42,11 @@ export default function Navbar() {
             <Image
               src="/android-chrome-192x192.png"
               alt="Webzard Studios"
-              width={56}
-              height={56}
+              width={64}
+              height={64}
               className="w-14 h-14 md:w-16 md:h-16"
+              priority
+              quality={90}
             />
             <span className="text-xl font-semibold text-navy">Webzard Studios</span>
           </Link>
