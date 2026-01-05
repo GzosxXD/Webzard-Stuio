@@ -1,141 +1,117 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null)
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    const hero = heroRef.current
-    if (!hero) return
-
-    const circles = hero.querySelectorAll("[data-circle]")
-    const blobs = hero.querySelectorAll("[data-blob]")
-
-    let rafId: number
-    let scrollY = 0
-    const startTime = performance.now()
+    const loadTimer = setTimeout(() => setIsLoaded(true), 2900)
 
     const handleScroll = () => {
-      scrollY = window.scrollY
-    }
-
-    const animate = (currentTime: number) => {
-      const elapsed = (currentTime - startTime) / 1000
-      const offset = scrollY * 0.5
-
-      circles.forEach((circle, i) => {
-        const element = circle as HTMLElement
-        const float = Math.sin(elapsed * 0.5 + i * 0.5) * 10
-        const scale = 1 + Math.sin(elapsed * 0.3 + i * 0.3) * 0.02
-        element.style.transform = `translate(-50%, -50%) translateY(${offset * (1 + i * 0.1) + float}px) scale(${scale})`
-      })
-
-      blobs.forEach((blob, i) => {
-        const element = blob as HTMLElement
-        const float = Math.sin(elapsed * 0.4 + i * 2) * 15
-        const rotate = elapsed * 10 + i * 30
-        element.style.transform = `translateY(${offset * 0.3 + float}px) rotate(${rotate}deg)`
-      })
-
-      rafId = requestAnimationFrame(animate)
+      const scrollY = window.scrollY
+      const windowHeight = window.innerHeight
+      const progress = Math.min(scrollY / windowHeight, 1)
+      setScrollProgress(progress)
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
-    rafId = requestAnimationFrame(animate)
-
     return () => {
+      clearTimeout(loadTimer)
       window.removeEventListener("scroll", handleScroll)
-      cancelAnimationFrame(rafId)
     }
   }, [])
 
   return (
     <section
+      id="hero"
       ref={heroRef}
-      className="relative min-h-screen pt-[152px] sm:pt-[176px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-secondary/50 to-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+      style={{ paddingTop: "calc(2rem + 40px)" }}
     >
-      {/* Background Elements - GPU Optimized */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2" style={{ willChange: "transform" }}>
-          <div
-            data-circle
-            className="w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full border border-border/30 absolute top-1/2 left-1/2"
-            style={{ transform: "translate(-50%, -50%)", willChange: "transform" }}
-          />
-          <div
-            data-circle
-            className="w-[400px] h-[400px] md:w-[800px] md:h-[800px] rounded-full border border-border/20 absolute top-1/2 left-1/2"
-            style={{ transform: "translate(-50%, -50%)", willChange: "transform" }}
-          />
-          <div
-            data-circle
-            className="w-[500px] h-[500px] md:w-[1000px] md:h-[1000px] rounded-full border border-border/10 absolute top-1/2 left-1/2"
-            style={{ transform: "translate(-50%, -50%)", willChange: "transform" }}
-          />
-        </div>
+      {/* Dynamic background layers */}
+      <div className="absolute inset-0">
         <div
-          data-blob
-          className="absolute top-20 right-10 md:right-20 w-48 h-48 md:w-72 md:h-72 bg-gold/5 rounded-full blur-3xl"
-          style={{ willChange: "transform" }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gold/5 blur-3xl"
+          style={{
+            transform: `translate(${scrollProgress * -50}px, ${scrollProgress * 30}px)`,
+            opacity: 1 - scrollProgress * 0.5,
+          }}
         />
         <div
-          data-blob
-          className="absolute bottom-20 left-10 md:left-20 w-64 h-64 md:w-96 md:h-96 bg-navy/5 rounded-full blur-3xl"
-          style={{ willChange: "transform" }}
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-blue-500/5 blur-3xl"
+          style={{
+            transform: `translate(${scrollProgress * 40}px, ${scrollProgress * -20}px)`,
+            opacity: 1 - scrollProgress * 0.5,
+          }}
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-        {/* Floating Badge */}
-        <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-secondary border border-border mb-6 sm:mb-8">
-          <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-          <span className="text-xs sm:text-sm font-medium text-muted-foreground">Systems-First Web Development</span>
+      {/* Main content */}
+      <div
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        style={{
+          transform: `translateY(${scrollProgress * -80}px)`,
+          opacity: 1 - scrollProgress * 1.5,
+        }}
+      >
+        {/* Chapter marker */}
+        <div
+          className={`mb-12 transition-all duration-1000 delay-300 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+        >
+          <span className="text-xs font-mono text-gold/60 tracking-widest uppercase">/ 01 — Introduction</span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight text-foreground mb-4 sm:mb-6 text-balance">
-          Websites Built, Optimized,{" "}
-          <span className="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">and Engineered</span>{" "}
-          to Perform
+        {/* Main heading */}
+        <h1
+          className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extralight tracking-tight text-white leading-tight mb-8 transition-all duration-1000 delay-500 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
+          <span className="block">Websites Built,</span>
+          <span className="block">
+            Optimized, &{" "}
+            <span className="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">Engineered</span>
+          </span>
+          <span className="block text-muted-foreground">to Perform</span>
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed text-pretty">
+        {/* Subheading */}
+        <p
+          className={`text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light transition-all duration-1000 delay-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
           We optimize frontend, backend, and infrastructure so your site loads fast, stays stable, and turns visitors
           into customers.
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-          <Button
-            asChild
-            size="lg"
-            className="w-full sm:w-auto bg-navy hover:bg-navy-light text-primary-foreground px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base"
+        {/* CTA buttons */}
+        <div
+          className={`mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 delay-900 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
+          <a
+            href="#contact"
+            className="px-8 py-4 bg-white text-background font-medium text-sm tracking-wider uppercase transition-all duration-300 hover:bg-gold"
           >
-            <a href="#contact">Start Your Project</a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="w-full sm:w-auto border-navy text-navy hover:bg-navy hover:text-primary-foreground px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base bg-transparent"
+            Start Your Project
+          </a>
+          <a
+            href="#portfolio"
+            className="px-8 py-4 border border-border text-muted-foreground font-medium text-sm tracking-wider uppercase transition-all duration-300 hover:border-muted-foreground hover:text-white"
           >
-            <a href="#portfolio">View Our Work</a>
-          </Button>
+            View Work
+          </a>
         </div>
       </div>
 
-      {/* Scroll Indicator - hidden on very small screens */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
-        <a
-          href="#services"
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <span className="text-xs font-medium uppercase tracking-wider">Scroll</span>
-          <ChevronDown className="w-5 h-5" />
-        </a>
+      {/* Scroll indicator */}
+      <div
+        className={`absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 transition-all duration-500 ${scrollProgress > 0.1 ? "opacity-0" : "opacity-100"} ${isLoaded ? "translate-y-0" : "translate-y-4"}`}
+        style={{ transitionDelay: isLoaded ? "1100ms" : "0ms" }}
+      >
+        <span className="text-xs text-muted-foreground tracking-widest uppercase">Scroll to Explore</span>
+        <div className="w-px h-16 bg-gradient-to-b from-muted-foreground to-transparent relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-4 bg-gold animate-[scrollLine_2s_ease-in-out_infinite]" />
+        </div>
       </div>
     </section>
   )

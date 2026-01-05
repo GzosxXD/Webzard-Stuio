@@ -1,7 +1,6 @@
 "use client"
 
 import { ArrowUpRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
@@ -11,103 +10,126 @@ const projects = [
     id: 1,
     title: "Evergreen Dental",
     category: "Healthcare",
-    description: "Modern patient-focused dental website.",
+    description: "Modern patient-focused dental website with 42% faster load times.",
     image: "/modern-dental-clinic-website-professional.jpg",
+    stats: "+42% speed",
   },
   {
     id: 2,
     title: "Summit Realty",
     category: "Real Estate",
-    description: "Luxury real estate platform with advanced search.",
+    description: "Luxury property platform engineered for conversion and performance.",
     image: "/luxury-real-estate-website-property-listings.jpg",
+    stats: "+38% leads",
   },
   {
     id: 3,
     title: "Craft & Barrel",
     category: "Restaurant",
-    description: "Elegant online presence for an upscale gastropub.",
+    description: "Elegant digital presence with online ordering integration.",
     image: "/upscale-restaurant-website-elegant-dark-theme.jpg",
+    stats: "+51% orders",
   },
 ]
 
 export default function PortfolioPreview() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isInView, setIsInView] = useState(false)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
+    const observer = new IntersectionObserver(([entry]) => entry.isIntersecting && setIsInView(true), {
+      threshold: 0.1,
+    })
+    if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section ref={sectionRef} id="portfolio" className="py-16 sm:py-24 lg:py-32 bg-secondary/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-10 sm:mb-16 ${isVisible ? "animate-stagger-1" : "opacity-0"}`}>
-          <span className="text-sm font-medium text-gold uppercase tracking-wider">Our Work</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-extralight tracking-tight text-foreground text-balance">
-            Featured Projects
-          </h2>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real results for real businesses.
-          </p>
+    <section ref={sectionRef} id="portfolio" className="py-32 lg:py-48 bg-background relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        {/* Chapter marker */}
+        <div
+          className={`mb-16 transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
+          <span className="text-xs font-mono text-gold/60 tracking-widest uppercase">/ 04 — Selected Work</span>
         </div>
 
-        {/* Portfolio Grid - Preview (3 projects) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10">
+        {/* Header */}
+        <div
+          className={`flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 transition-all duration-1000 delay-200 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
+          <div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight tracking-tight text-white leading-tight">
+              Case Studies
+            </h2>
+            <p className="mt-6 text-lg text-muted-foreground max-w-xl">
+              Real businesses. Measurable outcomes. Engineering solutions that last.
+            </p>
+          </div>
+          <Link
+            href="/portfolio"
+            className="mt-8 lg:mt-0 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors group"
+          >
+            View All Work
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
+        </div>
+
+        {/* Projects grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Link
               key={project.id}
               href={`/portfolio/${project.id}`}
-              className={`group relative overflow-hidden rounded-2xl bg-card border border-border transition-all duration-500 hover:shadow-xl hover:shadow-gold/10 ${isVisible ? `animate-stagger-${index + 2}` : "opacity-0"}`}
+              className={`group relative overflow-hidden transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
+              style={{ transitionDelay: `${400 + index * 150}ms` }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="aspect-[4/3] overflow-hidden relative">
+              <div className="aspect-[4/5] relative overflow-hidden bg-card">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className={`object-cover transition-all duration-700 ${hoveredIndex === index ? "scale-110" : "scale-100"}`}
                   loading={index === 0 ? "eager" : "lazy"}
                   quality={85}
                 />
+
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <ArrowUpRight className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent transition-opacity duration-500 ${hoveredIndex === index ? "opacity-90" : "opacity-70"}`}
+                />
+
+                {/* Content */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-mono text-gold/60 tracking-wider uppercase">{project.category}</span>
+                    <span className="text-xs font-mono text-muted-foreground">{project.stats}</span>
+                  </div>
+
+                  <h3 className="text-2xl font-light text-white mb-2 group-hover:text-gold transition-colors duration-300">
+                    {project.title}
+                  </h3>
+
+                  <p
+                    className={`text-sm text-muted-foreground leading-relaxed transition-all duration-500 ${hoveredIndex === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                  >
+                    {project.description}
+                  </p>
+
+                  <div
+                    className={`mt-4 flex items-center gap-2 text-xs text-gold transition-all duration-500 ${hoveredIndex === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                  >
+                    View Case Study
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
               </div>
-              <div className="p-4 sm:p-6">
-                <span className="text-xs font-medium text-gold uppercase tracking-wider">{project.category}</span>
-                <h3 className="mt-2 text-base sm:text-lg font-medium text-foreground group-hover:text-gold transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="mt-2 text-xs sm:text-sm text-muted-foreground line-clamp-2">{project.description}</p>
-              </div>
             </Link>
           ))}
-        </div>
-
-        {/* CTA Button */}
-        <div className="flex justify-center">
-          <Button
-            asChild
-            className="bg-navy hover:bg-navy-light text-primary-foreground px-8 hover:scale-105 transition-transform duration-300"
-          >
-            <Link href="/portfolio">View Case Studies</Link>
-          </Button>
         </div>
       </div>
     </section>

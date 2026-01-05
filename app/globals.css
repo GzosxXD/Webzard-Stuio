@@ -4,54 +4,51 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to match Webzard Studios navy, slate, and gold color palette */
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.2 0.02 250);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.02 250);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.02 250);
-  --primary: oklch(0.25 0.05 250);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.97 0.005 250);
-  --secondary-foreground: oklch(0.25 0.05 250);
-  --muted: oklch(0.96 0.005 250);
-  --muted-foreground: oklch(0.5 0.02 250);
-  --accent: oklch(0.75 0.12 75);
-  --accent-foreground: oklch(0.25 0.05 250);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.005 250);
-  --input: oklch(0.92 0.005 250);
-  --ring: oklch(0.5 0.05 250);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
+  --background: #0a1628;
+  --foreground: #ffffff;
+  --card: #0d1d2e;
+  --card-foreground: #ffffff;
+  --popover: #0d1d2e;
+  --popover-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #0a1628;
+  --secondary: #132236;
+  --secondary-foreground: #ffffff;
+  --muted: #1a2d42;
+  --muted-foreground: #94a3b8;
+  --accent: #d4a853;
+  --accent-foreground: #0a1628;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1e3a52;
+  --input: #1e3a52;
+  --ring: #d4a853;
+  --chart-1: #d4a853;
+  --chart-2: #3b82f6;
+  --chart-3: #10b981;
+  --chart-4: #f59e0b;
+  --chart-5: #ef4444;
+  --radius: 0rem;
 
-  /* Custom colors for Webzard Studios */
-  --navy: oklch(0.25 0.05 250);
-  --navy-light: oklch(0.35 0.05 250);
-  --slate: oklch(0.45 0.03 250);
-  --gold: oklch(0.75 0.12 75);
-  --gold-light: oklch(0.85 0.1 75);
+  --navy: #0a1628;
+  --navy-light: #132236;
+  --slate: #475569;
+  --gold: #d4a853;
+  --gold-light: #e4c078;
 
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #0a1628;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #0a1628;
+  --sidebar-accent: #132236;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1e3a52;
+  --sidebar-ring: #d4a853;
 }
 
 @theme inline {
-  /* Using Inter font to match reference site */
-  --font-sans: "Inter", "Inter Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -76,10 +73,10 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -89,7 +86,6 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Custom theme colors */
   --color-navy: var(--navy);
   --color-navy-light: var(--navy-light);
   --color-slate: var(--slate);
@@ -99,18 +95,26 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-    /* Removed background image to improve LCP and reduce CLS */
-  }
-  html {
-    scroll-behavior: smooth;
+    @apply border-border;
   }
 
-  /* Prevent animation on reduced motion */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overscroll-behavior-y: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
     *,
     *::before,
     *::after {
@@ -121,32 +125,54 @@
   }
 }
 
-/* GPU-accelerated animations */
+@layer utilities {
+  .section-chapter {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .section-header {
+    margin-bottom: 5rem;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px) translateZ(0);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) translateZ(0);
+    transform: translateY(0);
   }
 }
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
-  will-change: opacity, transform;
 }
 
-/* Add smooth staggered fade-in animations */
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(300%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
 @keyframes fadeInStagger {
   from {
     opacity: 0;
-    transform: translateY(30px) translateZ(0);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) translateZ(0);
+    transform: translateY(0);
   }
 }
 
@@ -170,18 +196,6 @@
   opacity: 0;
 }
 
-/* Add smooth card hover animations */
-@keyframes cardHoverGlow {
-  0%,
-  100% {
-    box-shadow: 0 4px 20px rgba(217, 174, 87, 0.1);
-  }
-  50% {
-    box-shadow: 0 8px 30px rgba(217, 174, 87, 0.2);
-  }
-}
-
-/* Add floating animation for interactive elements */
 @keyframes float {
   0%,
   100% {
@@ -196,6 +210,7 @@
   animation: float 3s ease-in-out infinite;
 }
 
-.animate-float-delayed {
-  animation: float 3s ease-in-out 1s infinite;
+::selection {
+  background: rgba(212, 168, 83, 0.3);
+  color: white;
 }

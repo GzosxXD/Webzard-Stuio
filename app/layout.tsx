@@ -4,6 +4,8 @@ import { Inter, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import NewYearBanner from "@/components/christmas-banner"
 import Navbar from "@/components/navbar"
+import CinematicLoader from "@/components/cinematic-loader"
+import SectionIndex from "@/components/section-index"
 
 const _inter = Inter({
   subsets: ["latin"],
@@ -17,9 +19,20 @@ const _geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Webzard Studios | AI-Powered Web Development",
+  title: "Webzard Studios | Engineering & Performance-Driven Web Development",
   description:
-    "Custom AI-powered websites for businesses. Transparent pricing, direct developer communication, no long-term contracts.",
+    "Independent technical studio focused on performance, systems, and long-term reliability. Custom websites, optimization, and AI integration—built with clarity and engineering depth.",
+  keywords: [
+    "web development studio",
+    "performance optimization",
+    "custom websites",
+    "AI integration",
+    "technical studio",
+    "engineering-first",
+  ],
+  authors: [{ name: "Webzard Studios" }],
+  creator: "Webzard Studios",
+  publisher: "Webzard Studios",
   generator: "v0.app",
   icons: {
     icon: [
@@ -30,6 +43,15 @@ export const metadata: Metadata = {
       { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.webzardstudios.com",
+    siteName: "Webzard Studios",
+    title: "Webzard Studios | Engineering & Performance-Driven Web Development",
+    description:
+      "Independent technical studio focused on performance, systems, and long-term reliability. Custom websites, optimization, and AI integration.",
   },
 }
 
@@ -57,6 +79,9 @@ export default function RootLayout({
               name: "Webzard Studios",
               url: "https://www.webzardstudios.com",
               email: "webzardo@webzardstudios.com",
+              description: "Independent technical studio focused on performance, systems, and long-term reliability.",
+              foundingDate: "2023",
+              specialty: ["Web Development", "Performance Optimization", "AI Integration", "Technical Consulting"],
             }),
           }}
         />
@@ -64,8 +89,11 @@ export default function RootLayout({
         <script src="https://files.bpcontent.cloud/2025/12/18/16/20251218160236-3CR5L61B.js" defer></script>
       </head>
       <body className={`font-sans antialiased`}>
+        {/* <div className="grain-overlay" aria-hidden="true" /> */}
+        <CinematicLoader />
         <NewYearBanner />
         <Navbar />
+        <SectionIndex />
         {children}
       </body>
     </html>
